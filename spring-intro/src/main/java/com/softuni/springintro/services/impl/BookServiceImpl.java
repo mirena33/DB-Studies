@@ -76,12 +76,63 @@ public class BookServiceImpl implements BookService {
 
     }
 
-    @Override
-    public List<Book> getAllBooksAfter2000() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy");
-        LocalDate releaseDate = LocalDate.parse("31/12/2000", formatter);
 
-        return this.bookRepository.findAllByReleaseDateAfter(releaseDate);
+    @Override
+    public List<Book> getAllBooksByAgeRestriction(String ageRestriction) {
+        return this.bookRepository
+                .findAllByAgeRestriction(AgeRestriction.valueOf(ageRestriction.toUpperCase()));
+    }
+
+    @Override
+    public List<Book> getAllBooksByEditionTypeAndCopies(String editionType, int copies) {
+        return this.bookRepository
+                .findAllByEditionTypeAndCopiesLessThan(EditionType.valueOf(editionType.toUpperCase()), copies);
+    }
+
+    @Override
+    public List<Book> getAllBooksWithPriceLessThanAndGreaterThan(BigDecimal num1, BigDecimal num2) {
+        return this.bookRepository.findAllByPriceLessThanAndPriceGreaterThan(num1, num2);
+    }
+
+    @Override
+    public List<Book> getAllBooksByReleaseDateNotInYear(int year) {
+        LocalDate before = LocalDate.of(year, 1, 1);
+        LocalDate after = LocalDate.of(year, 12, 31);
+
+        return this.bookRepository.findAllByReleaseDateBeforeOrReleaseDateAfter(before, after);
+    }
+
+    @Override
+    public List<Book> getAllBooksByReleaseDateBefore(String date) {
+        LocalDate releaseDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+
+        return this.bookRepository.findAllByReleaseDateBefore(releaseDate);
+    }
+
+    @Override
+    public List<Book> getAllBooksByTitleContainsString(String str) {
+        return this.bookRepository.findAllByTitleContains(str);
+    }
+
+    @Override
+    public List<Book> getAllBooksByAuthorLastNameStartingWith(String startWith) {
+        return this.bookRepository.findAllByAuthor_LastNameStartingWith(startWith);
+    }
+
+    @Override
+    public int updateBooksCopiesAfterDate(String date, int copies) {
+        LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd MMM yyyy"));
+        return this.bookRepository.updateAllBooksAfterGivenDate(localDate, copies);
+    }
+
+    @Override
+    public int getTotalCopiesByAuthor(String fullName) {
+        return this.bookRepository.findAllCopiesByAuthor(fullName);
+    }
+
+    @Override
+    public int getAllBooksWithTitleLongerThan(int num) {
+        return this.bookRepository.findAllBooksTitleLongerThan(num);
     }
 
     private Set<Category> getRandomCategories() {

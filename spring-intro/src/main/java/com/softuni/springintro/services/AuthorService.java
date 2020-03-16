@@ -12,5 +12,5 @@ public interface AuthorService {
 
     Author findAuthorById(long id);
 
-    List<Author> findAllAuthorsByCountOfBooks();
+    List<Author> getAuthorsFirstNameEndsWith(String endsWith);
 }

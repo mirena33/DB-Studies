@@ -49,7 +49,8 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public List<Author> findAllAuthorsByCountOfBooks() {
-        return this.authorRepository.findAuthorByCountOfBook();
+    public List<Author> getAuthorsFirstNameEndsWith(String endsWith) {
+        return this.authorRepository.findAllByFirstNameEndsWith(endsWith);
     }
+
 }
