@@ -33,7 +33,7 @@ public class Engine implements Runnable {
         }
 
 //         Ex.4
-          this.employeeWithSalaryOver50k();
+        this.employeeWithSalaryOver50k();
 
 //         Ex.5
         this.employeesFromDepartmentEx();
@@ -46,7 +46,7 @@ public class Engine implements Runnable {
         }
 
 //         Ex.7
-         this.addressesWithEmployeeCountEx();
+        this.addressesWithEmployeeCountEx();
 
 //        Ex.8
         try {

@@ -4,15 +4,15 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="demos.Student" table="students">
-        <meta attribute = "class-description">
+        <meta attribute="class-description">
             This class contains the student details.
         </meta>
 
         <id name="id" column="id" type="int">
-            <generator class="identity" />
+            <generator class="identity"/>
         </id>
 
-        <property name="name" column="name" type="string" />
-        <property name="registrationDate" column="registration_date" type="timestamp" />
+        <property name="name" column="name" type="string"/>
+        <property name="registrationDate" column="registration_date" type="timestamp"/>
     </class>
 </hibernate-mapping>

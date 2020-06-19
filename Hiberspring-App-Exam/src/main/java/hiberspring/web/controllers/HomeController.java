@@ -28,10 +28,10 @@ public class HomeController extends BaseController {
     public ModelAndView index() {
         boolean areImported =
                 this.townService.townsAreImported() &&
-                this.branchService.branchesAreImported() &&
-                this.employeeCardService.employeeCardsAreImported() &&
-                this.productService.productsAreImported() &&
-                this.employeeService.employeesAreImported();
+                        this.branchService.branchesAreImported() &&
+                        this.employeeCardService.employeeCardsAreImported() &&
+                        this.productService.productsAreImported() &&
+                        this.employeeService.employeesAreImported();
 
         return super.view("index", "areImported", areImported);
     }

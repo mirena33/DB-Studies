@@ -41,6 +41,5 @@ public class JpaDemoMain {
                 .stream().forEach(System.out::println);
 
 
-
     }
 }

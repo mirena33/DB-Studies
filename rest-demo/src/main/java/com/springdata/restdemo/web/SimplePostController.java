@@ -43,7 +43,7 @@ public class SimplePostController {
         log.info("Post deserialized: {}", post);
         Post created = postService.createPost(post);
         URI uri = MvcUriComponentsBuilder
-                .fromMethodName(SimplePostController.class,"addPost", post)
+                .fromMethodName(SimplePostController.class, "addPost", post)
                 .pathSegment("{id}").buildAndExpand(created.getId()).toUri();
         return ResponseEntity.created(uri).body(gson.toJson(created));
     }

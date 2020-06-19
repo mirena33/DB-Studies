@@ -38,7 +38,7 @@ public class ImportController extends BaseController {
 
     @GetMapping("/xml")
     public ModelAndView importXml() {
-        boolean[] areImported = new boolean[] {
+        boolean[] areImported = new boolean[]{
                 this.pictureService.areImported(),
                 this.teamService.areImported()
         };

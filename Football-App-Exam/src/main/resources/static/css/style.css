@@ -12,12 +12,12 @@ body {
 }
 
 .jumbotron-background {
-    background-color: #343a40!important;
+    background-color: #343a40 !important;
     color: white;
 }
 
 .hr-background {
-    background-color:white;
+    background-color: white;
     height: 1px;
 }
 

@@ -34,10 +34,10 @@ public class ImportController extends BaseController {
 
     @GetMapping("/json")
     public ModelAndView importJson() {
-        boolean[] areImported = new boolean[] {
-            this.townService.townsAreImported(),
-            this.branchService.branchesAreImported(),
-            this.employeeCardService.employeeCardsAreImported()
+        boolean[] areImported = new boolean[]{
+                this.townService.townsAreImported(),
+                this.branchService.branchesAreImported(),
+                this.employeeCardService.employeeCardsAreImported()
         };
 
         return super.view("json/import-json", "areImported", areImported);
@@ -45,7 +45,7 @@ public class ImportController extends BaseController {
 
     @GetMapping("/xml")
     public ModelAndView importXml() {
-        boolean[] areImported = new boolean[] {
+        boolean[] areImported = new boolean[]{
                 this.productService.productsAreImported(),
                 this.employeeService.employeesAreImported()
         };

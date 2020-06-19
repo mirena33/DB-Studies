@@ -6,11 +6,11 @@ import java.io.IOException;
 
 public interface EmployeeService {
 
-   Boolean employeesAreImported();
+    Boolean employeesAreImported();
 
-   String readEmployeesXmlFile() throws IOException;
+    String readEmployeesXmlFile() throws IOException;
 
-   String importEmployees() throws JAXBException, FileNotFoundException;
+    String importEmployees() throws JAXBException, FileNotFoundException;
 
-   String exportProductiveEmployees();
+    String exportProductiveEmployees();
 }

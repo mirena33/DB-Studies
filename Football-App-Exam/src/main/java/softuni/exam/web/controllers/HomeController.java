@@ -9,7 +9,7 @@ import softuni.exam.service.PlayerService;
 import softuni.exam.service.TeamService;
 
 @Controller
-public class HomeController  extends BaseController{
+public class HomeController extends BaseController {
 
     private final PictureService pictureService;
     private final TeamService teamService;
@@ -28,6 +28,6 @@ public class HomeController  extends BaseController{
                 this.pictureService.areImported() &&
                 this.teamService.areImported();
 
-        return super.view("index","areImported", areImported);
+        return super.view("index", "areImported", areImported);
     }
 }

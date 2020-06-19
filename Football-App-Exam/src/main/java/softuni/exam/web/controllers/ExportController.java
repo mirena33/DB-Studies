@@ -19,16 +19,16 @@ public class ExportController extends BaseController {
     }
 
     @GetMapping("/players-with-salary-bigger")
-    public ModelAndView exportPlayerWithSalaryBiggerThan(){
+    public ModelAndView exportPlayerWithSalaryBiggerThan() {
         String playersWithSalary = this.playerService.exportPlayersWhereSalaryBiggerThan();
 
-        return super.view("export/export-players-with-salary-bigger.html","playersWithSalaryBiggerThan", playersWithSalary);
+        return super.view("export/export-players-with-salary-bigger.html", "playersWithSalaryBiggerThan", playersWithSalary);
     }
 
     @GetMapping("/team-players")
-    public ModelAndView exportPlayerInATeam(){
+    public ModelAndView exportPlayerInATeam() {
         String playersInATeam = this.playerService.exportPlayersInATeam();
 
-        return super.view("export/export-team-players.html","playersInATeam", playersInATeam);
+        return super.view("export/export-team-players.html", "playersInATeam", playersInATeam);
     }
 }
